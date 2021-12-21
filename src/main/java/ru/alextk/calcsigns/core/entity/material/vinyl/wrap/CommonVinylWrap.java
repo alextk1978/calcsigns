@@ -60,7 +60,7 @@ public class CommonVinylWrap extends Material {
                                                                  @NonNull String colour,
                                                                  @NonNull Integer rollWidth,
                                                                  @NonNull Integer pricePerRunningMeter) {
-        CommonVinylWrap commonVinylWrap = new CommonVinylWrap();
+        var commonVinylWrap = new CommonVinylWrap();
         commonVinylWrap.setNameOfManufacturer(nameOfManufacturer);
         commonVinylWrap.setSeries(series);
         commonVinylWrap.setColour(colour);
@@ -74,7 +74,7 @@ public class CommonVinylWrap extends Material {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        CommonVinylWrap that = (CommonVinylWrap) o;
+        var that = (CommonVinylWrap) o;
         return getId() != null && Objects.equals(getId(), that.getId());
     }
 

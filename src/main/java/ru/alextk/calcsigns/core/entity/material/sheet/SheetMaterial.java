@@ -78,7 +78,7 @@ public class SheetMaterial extends Material {
                                                              @NonNull Integer sheetLength,
                                                              @NonNull Integer sheetWidth,
                                                              @NonNull Integer sheetPrice) {
-        SheetMaterial sheetMaterial = new SheetMaterial();
+        var sheetMaterial = new SheetMaterial();
         sheetMaterial.setNameOfMaterial(nameOfMaterial);
         sheetMaterial.setSheetDepth(sheetDepth);
         sheetMaterial.setSheetLength(sheetLength);
