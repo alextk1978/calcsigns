@@ -1,7 +1,6 @@
 package ru.alextk.calcsigns.core.entity.material.sheet;
 
 import lombok.*;
-import org.jetbrains.annotations.NotNull;
 import ru.alextk.calcsigns.core.entity.material.Material;
 
 import javax.persistence.*;
@@ -21,12 +20,6 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Table(name = "SHEET_MATERIAL")
 public class SheetMaterial extends Material {
-
-    /**
-     * Наименование материала. Например "Вспененный ПВХ-пластик"
-     */
-    @Column(name = "NAME_OF_MATERIAL", nullable = false)
-    private String nameOfMaterial;
 
     /**
      * Толщина материала в мм.
@@ -63,29 +56,4 @@ public class SheetMaterial extends Material {
      */
     @Column(name = "PRICE_PER_SQUARE_MILLIMETER")
     private Integer pricePerSquareMillimeter;
-
-    /**
-     * Метод для создания нового объекта с определенными значениями.
-     *
-     * @param nameOfMaterial наименование материала
-     * @param sheetDepth     толщина материала в мм
-     * @param sheetLength    длина листа
-     * @param sheetWidth     ширина листа
-     * @param sheetPrice     стоимость за лист
-     */
-    public static @NotNull SheetMaterial createSheetMaterial(@NonNull String nameOfMaterial,
-                                                             @NonNull Integer sheetDepth,
-                                                             @NonNull Integer sheetLength,
-                                                             @NonNull Integer sheetWidth,
-                                                             @NonNull Integer sheetPrice) {
-        var sheetMaterial = new SheetMaterial();
-        sheetMaterial.setNameOfMaterial(nameOfMaterial);
-        sheetMaterial.setSheetDepth(sheetDepth);
-        sheetMaterial.setSheetLength(sheetLength);
-        sheetMaterial.setSheetWidth(sheetWidth);
-        sheetMaterial.setSheetPrice(sheetPrice);
-        sheetMaterial.setSheetSquare((float) sheetLength * sheetWidth);
-        sheetMaterial.setPricePerSquareMillimeter((int) (sheetMaterial.getSheetPrice() / sheetMaterial.getSheetSquare()));
-        return sheetMaterial;
-    }
 }

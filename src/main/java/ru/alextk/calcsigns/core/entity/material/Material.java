@@ -29,6 +29,13 @@ public class Material {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * Наименование материала. Например "Вспененный ПВХ-пластик"
+     */
+
+    @Column(name = "name_of_materials")
+    private String nameOfMaterial;
+
     @ToString.Exclude
     @ManyToMany(fetch = FetchType.LAZY)
     @JsonBackReference

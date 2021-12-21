@@ -9,13 +9,14 @@ import java.util.Set;
 
 /**
  * @author Alexey Tkachenko
- *
+ * <p>
  * Класс, описывающий сущность Заказ на просчет стоимости.
  */
 
 @Entity
 @Getter
 @Setter
+@ToString
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "ESTIMATES")
@@ -28,7 +29,7 @@ public class OrderForMiscalculation {
     /**
      * Заказчик
      */
-    @Column (name = "clients")
+    @Column(name = "clients")
     private String customer;
 
     /**
@@ -54,8 +55,6 @@ public class OrderForMiscalculation {
      */
     @JsonBackReference
     @ToString.Exclude
-    @Column(name = "sign_elements")
     @OneToMany
     private Set<SignElement> signElements;
-
 }

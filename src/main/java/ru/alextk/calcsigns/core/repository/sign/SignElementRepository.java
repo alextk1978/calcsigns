@@ -1,4 +1,4 @@
-package ru.alextk.calcsigns.core.repository;
+package ru.alextk.calcsigns.core.repository.sign;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import ru.alextk.calcsigns.core.entity.sign.element.SignElement;

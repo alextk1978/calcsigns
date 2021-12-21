@@ -26,6 +26,12 @@ public class SignElement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "items_name")
+    private String itemName;
+
+    @Column(name = "price_for_the_whole_product")
+    private Integer priceForTheWholeProduct;
+
     @ToString.Exclude
     @JsonBackReference
     @ManyToMany(fetch = FetchType.LAZY)

@@ -2,7 +2,6 @@ package ru.alextk.calcsigns.core.entity.material.vinyl.wrap;
 
 import lombok.*;
 import org.hibernate.Hibernate;
-import org.jetbrains.annotations.NotNull;
 import ru.alextk.calcsigns.core.entity.material.Material;
 
 import javax.persistence.*;
@@ -54,21 +53,6 @@ public class CommonVinylWrap extends Material {
 
     @JoinColumn(name = "PRICE_PER_SQUARE_METER")
     private Integer pricePerSquareMeter;
-
-    public static @NotNull CommonVinylWrap createCommonVinylWrap(@NonNull String nameOfManufacturer,
-                                                                 @NonNull String series,
-                                                                 @NonNull String colour,
-                                                                 @NonNull Integer rollWidth,
-                                                                 @NonNull Integer pricePerRunningMeter) {
-        var commonVinylWrap = new CommonVinylWrap();
-        commonVinylWrap.setNameOfManufacturer(nameOfManufacturer);
-        commonVinylWrap.setSeries(series);
-        commonVinylWrap.setColour(colour);
-        commonVinylWrap.setRollWidth(rollWidth);
-        commonVinylWrap.setPricePerRunningMeter(pricePerRunningMeter);
-        commonVinylWrap.setPricePerSquareMeter(commonVinylWrap.getPricePerRunningMeter() / commonVinylWrap.getRollWidth());
-        return commonVinylWrap;
-    }
 
     @Override
     public boolean equals(Object o) {
